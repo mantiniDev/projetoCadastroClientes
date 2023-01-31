@@ -7,9 +7,10 @@
 
         {% if user.is_autenticated %}
             <p>Ola {{user.name}}</p>
-            <a href="{% url 'logout'%}">Sair</a>
+            <a href="{% url 'logout'%}" class="btn btn-outline-danger btn-sm" >Sair</a>
         {% else %}
             <a href="{% url 'login'%}" class="btn btn-outline-dark btn-sm" >Entrar</a>
+
         {% endif %}
 {% endblock %}
 
