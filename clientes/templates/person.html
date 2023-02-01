@@ -3,16 +3,39 @@
 {% block title %}Lista de Clientes{% endblock %}
 
 {% block main %}
-    <ul>
-        {% for person in persons %}
-        <h2>Lista de Clientes</h2>
-            <li>
-                <a href="{% url 'persons_update' person.id %}" class="link-dark"> {{ person.first_name }}</a>
-                <a href="{% url 'persons_delete' person.id %}" class="btn btn-outline-warning btn-sm" >Excluir</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="{% url 'person_new' %}" class="btn btn-outline-dark btn-sm" >Novo Cadastro</a>
-    <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-sm" > Sair </a>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" >
+                <h2>Lista de Clientes</h2>
+                <ul>
+                    <ul>
+                        {% for person in persons %}
+                        <br>
+                        <li class="list-group-item">
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item" >
+                                    <a href="{% url 'persons_update' person.id %}" class="link-dark"> {{ person.first_name }} {{person.last_name}}</a>
+                                </li>
+                                <li class="list-group-item" >
+                                    <a href="{% url 'persons_delete' person.id %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,-25" /> <span class="material-symbols-outlined"> person_remove </span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </ul>
+            </div>
+            <div class="col">
+                <br>
+                <br>
+                <br>
+                    <a href="{% url 'person_new' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" /> <span class="material-symbols-outlined"> person_add </span> </a>
+                    <br>
+                    <a href="{% url 'logout' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <span class="material-symbols-outlined"> logout </span> </a>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}

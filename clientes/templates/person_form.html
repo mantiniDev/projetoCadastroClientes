@@ -4,14 +4,22 @@
 {% block title %}Cadastro{% endblock %}
 
 {% block main %}
-<body>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|bootstrap }}
+    <div class="container">
         <br>
-        <button type="submit" class="btn btn-outline-dark btn-sm" >Cadastrar</button>
-        <a href="{% url 'person_list' %}" class="btn btn-outline-danger btn-sm" >Retornar</a>
-    </form>
-    <br>
+        <div class="row">
+
+        <div class="col">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|bootstrap_horizontal }}
+                <br>
+                <button type="submit" class="btn btn-outline-dark btn-sm" >Cadastrar</button>
+            </form>
+        </div>
+        <div class="col">
+            <a href="{% url 'person_list' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <span class="material-symbols-outlined"> logout </span></a>
+        </div>
+        </div>
+    </div>
 
 {% endblock %}

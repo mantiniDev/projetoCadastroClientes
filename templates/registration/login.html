@@ -1,14 +1,28 @@
 {% extends 'base.html' %}
-
-{% block title %}titulo{% endblock %}
+{% load bootstrap %}
+{% block title %}Login{% endblock %}
 
 {% block main %}
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            <h2> Login </h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|bootstrap }}
+                <br>
+                <button type="submit" class="btn btn-outline-dark btn-sm" >Entrar</button>
+                </form>
+            </div>
+            <div class="col">
+                <br>
+                <br>
+                <br>
+                <a href="{% url 'logout'%}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <span class="material-symbols-outlined"> logout </span> </a>
+            </div>
+        </div>
+    </div>
 
-    <h2> Login </h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-        <button type="submit" class="btn btn-outline-dark btn-sm" >LOGIN</button>
-            <a href="{% url 'logout'%}" class="btn btn-outline-danger btn-sm" >Sair</a>
-    </form>
 {% endblock %}
