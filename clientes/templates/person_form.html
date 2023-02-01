@@ -13,19 +13,19 @@
                 {% csrf_token %}
                 {{ form|bootstrap_horizontal }}
                 <br>
-                <button type="submit" class="btn btn-outline-dark btn-sm" >Cadastrar</button>
+                <button type="submit" class="badge text-bg-dark" >Cadastrar</button>
+                <a href="{% url 'person_list' %}"> <span class="badge text-bg-danger"> Cancelar </span>
             </form>
         </div>
         <div class="col">
-            <br>
-            <br>
-            <br>
-            <br>
-            <a href="{% url 'person_list' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" /> <span class="material-symbols-outlined">
-undo
-</span></a>
         </div>
         </div>
     </div>
-
+{% endblock %}
+{% block footer%}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Todos dos direitos reservados</span>
+        </div>
+    </footer>
 {% endblock %}

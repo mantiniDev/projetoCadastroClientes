@@ -6,7 +6,7 @@
     <h1>Tem certeza que deseja deletar o paciente: {{person.first_name}}</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <button type="submit" class="btn btn-outline-success btn-sm" >Sim</button>
-        <a href="{% url 'person_list' %}" class="btn btn-outline-danger btn-sm" >Não</a>
+        <button type="submit" class="badge text-bg-dark">Sim</button>
+        <a href="{% url 'person_list' %}"><span class="badge text-bg-danger">Não</span></a>
     </form>
 {% endblock %}
