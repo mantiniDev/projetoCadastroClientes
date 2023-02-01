@@ -5,10 +5,10 @@
 
 {% block main %}
     <div class="container">
-        <br>
         <div class="row">
-
         <div class="col">
+            <br>
+            <h2>Cadastro </h2>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|bootstrap_horizontal }}
@@ -17,7 +17,13 @@
             </form>
         </div>
         <div class="col">
-            <a href="{% url 'person_list' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> <span class="material-symbols-outlined"> logout </span></a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="{% url 'person_list' %}"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" /> <span class="material-symbols-outlined">
+undo
+</span></a>
         </div>
         </div>
     </div>
